@@ -1,0 +1,10 @@
+[
+    {"Name":"Akash", "age":22, "Profession": "java developer", "Team":"A"},
+{"Name":"Akashi", "age":21, "Profession": "Node developer", "Team":"B"},
+{"Name":"ekash", "age":20, "Profession": "React developer", "Team":"C"},
+{"Name":"qkash", "age":19, "Profession": "Spring developer", "Team":"B"},
+{"Name":"skash", "age":24, "Profession": "C developer", "Team":"A"},
+{"Name":"zkash", "age":23, "Profession": "Rust developer", "Team":"C"},
+{"Name":"xkash", "age":25, "Profession": "Go developer", "Team":"A"},
+{"Name":"bkash", "age":26, "Profession": "Rust developer", "Team":"C"}
+]
