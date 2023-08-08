@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Notes from './components/Notes';
+
 import Blog from './components/Blog';
 import Home from './components/Home';
 import './style.css';
@@ -18,7 +18,7 @@ function App() {
 
         <Route path='/' element={<Home/>}/>
         <Route path='blog' element={<Blog/>}/>
-        <Route path='notes' element={<Notes/>}/>
+       
 
       </Routes>
       <Footer/>
