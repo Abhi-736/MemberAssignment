@@ -14,3 +14,23 @@ padding:0;
    
     border: 5px solid black;
 }
+.footer{position:fixed;
+    bottom:0;
+    width:100%;
+    height:auto;
+    display:flex;
+    background-color: black;
+    color:white;
+    
+
+}
+.row .card{ transition:.3s linear;
+}
+
+.row .card:hover{
+    transform:scale(.9);
+    
+}
+
+
+.footer a{color:rgb(211, 0, 11)}

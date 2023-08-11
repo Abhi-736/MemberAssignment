@@ -5,10 +5,10 @@ const Header = () => {
 const [current, setCurrent] = useState('')
   const handleChange=()=>{console.log(current)};
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Navbar
+         Team Selector
         </a>
         <button
           className="navbar-toggler"
@@ -24,62 +24,18 @@ const [current, setCurrent] = useState('')
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-             <Link to="/">
+             <Link className="nav-link" to="/">
                 Home
                 </Link>
             </li>
             <li className="nav-item">
-              <Link to="/blog" >
+              <Link className="nav-link" to="/blog" >
                 Team Memebers
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link className="dropdown-item" to='blog'>
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="notes">
-                    Notes
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link className="dropdown-item" to='/'>
-                    Home
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-          </ul>
+           </ul>
           
-            <input onChange={(e)=>setCurrent(e.target.value)}
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" onClick={()=>handleChange()} type="submit">
-              Search
-            </button>
+           
           
         </div>
       </div>

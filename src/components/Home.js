@@ -1,17 +1,19 @@
 import React from "react";
+import male from "../Images/male.jpeg";
+import female from "../Images/female.jpeg";
 /* import Details from "./text.json"; */
 
 const Home = () => {
   const [DetailsArray,setDetailsArray]= React.useState(JSON.parse(localStorage.getItem("Employee"))||
     [
-    {"Name":"Akash", "age":22, "Profession": "java developer", "Team":"A"},
-    {"Name":"Akashi", "age":21, "Profession": "Node developer", "Team":"B"},
-    {"Name":"ekash", "age":20, "Profession": "React developer", "Team":"C"},
-    {"Name":"qkash", "age":19, "Profession": "Spring developer", "Team":"B"},
-    {"Name":"skash", "age":24, "Profession": "C developer", "Team":"A"},
-    {"Name":"zkash", "age":23, "Profession": "Rust developer", "Team":"C"},
-    {"Name":"xkash", "age":25, "Profession": "Go developer", "Team":"A"},
-    {"Name":"bkash", "age":26, "Profession": "Rust developer", "Team":"C"}
+    {"Name":"Akash", "age":22, "Profession": "java developer", "Team":"A", "Gender":"Male"},
+    {"Name":"Akashi", "age":21, "Profession": "Node developer", "Team":"B", "Gender":"Female"},
+    {"Name":"ekash", "age":20, "Profession": "React developer", "Team":"C", "Gender":"Female"},
+    {"Name":"qkash", "age":19, "Profession": "Spring developer", "Team":"B", "Gender":"Male"},
+    {"Name":"skash", "age":24, "Profession": "C developer", "Team":"A", "Gender":"Female"},
+    {"Name":"zkash", "age":23, "Profession": "Rust developer", "Team":"C", "Gender":"Male"},
+    {"Name":"xkash", "age":25, "Profession": "Go developer", "Team":"A", "Gender":"Female"},
+    {"Name":"bkash", "age":26, "Profession": "Rust developer", "Team":"C", "Gender":"Male"}
     ]
     
     );
@@ -25,7 +27,7 @@ const Home = () => {
     (employee.Team===selectedTeam?{...employee,"Team":''}:{...employee,"Team":selectedTeam}):employee)
   setDetailsArray(updatedArray) 
   };
-  
+
   React.useEffect(()=>{
     localStorage.setItem("Employee", JSON.stringify(DetailsArray))
   }, [DetailsArray])
@@ -36,8 +38,8 @@ const Home = () => {
   
 
   return (
-    <div className='Home1 container text-center'>
-     <div className="row">
+    <div className='Home1 container text-center' style={{width:"50%"}}>
+     <div className="row ">
       <select className="form-select text-center my-3 mx-auto" style={{width:"300px"}} onChange={(e)=>setTeam(e.target.value)} value={selectedTeam}>
         <option className="text-center" value='A'>Team A</option>
         <option className="text-center" value='B'>Team B</option>
@@ -45,7 +47,7 @@ const Home = () => {
       </select>
       </div>
     
-      <div className="row g-2">
+      <div className="row g-2 ">
       {DetailsArray.map((value,id) => {
         return<Card Value={value} handlecardchange={handlecardchange} selectedTeam={selectedTeam} key={id} /> ;
       })}
@@ -54,19 +56,19 @@ const Home = () => {
   );
 };
 const Card = ({Value, handlecardchange, selectedTeam}) => {
-  const {Name, age, Profession, Team}= Value;
+  const {Name, age, Profession, Team, Gender}= Value;
 
 const handleChange=(Name)=>{
   handlecardchange(Name)}
 
   return (
-    <div className={`card col-4 ${Team===selectedTeam?'activated':''}` }   onClick={()=>handleChange(Name)}>
-  <img src="..." className="card-img-top" alt="..."/>
+    <div className={`card col-4 ${Team===selectedTeam?'activated':''}` } style={{cursor:"pointer", }}   onClick={()=>handleChange(Name)}>
+  <img src={`${Gender==="Male"?male:female}`} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Name: {Name}</h5>
     <p className="card-text">Age: {age}</p>
     <p className="card-text">Profession: {Profession}</p>
-    <a href="www.youtube.com" class="btn btn-primary">Go somewhere</a>
+    
   </div>
 </div>
   )
